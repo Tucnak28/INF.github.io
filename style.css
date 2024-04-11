@@ -84,16 +84,20 @@ nav {
     
 }
 
-ul li a {
+ul li {
     line-height: 128px;
-    text-decoration: none;  
     color: white;
-    
 }
+
+a {
+    text-decoration: none;  
+}
+
+
 
 .nav-links ul li:not(.logo):hover, .nav-links ul li:not(.logo) a:hover{
     color: black;
-    background: #D2D2D4;
+    background: #d2d2d452;
     border-radius: 25px;
     height: 128px;
 }
@@ -281,12 +285,12 @@ th {
   height: auto;
 }
 
-  .heading {
+.heading {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
     /* Add more styling properties as desired */
-  }
+}
 
 
 
