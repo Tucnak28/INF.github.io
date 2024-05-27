@@ -18,6 +18,7 @@ function console_log($output, $with_script_tags = true) {
     <meta charset="UTF-8">
 </head>
 <body>
+<a href="index.php" class="back-button">Zpět</a>
 <h1 style="text-align: center">Login</h1>
 <form action="" method="post">
     <fieldset class="formLogin">

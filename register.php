@@ -22,7 +22,8 @@
     </head>
 
     <body>
-        <h1 style="text-align: center">Register</h1>
+    <a href="index.php" class="back-button">Zpět</a>
+    <h1 style="text-align: center">Register</h1>
         <form action="" method="post" >
             <fieldset class="formLogin">
                 <label for="username" style="text-align: center">Username:

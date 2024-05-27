@@ -5,6 +5,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
+    background-image: linear-gradient(to bottom, #003366, #000000);
 }
 
 * {
@@ -634,16 +635,22 @@ input[type="password"]:focus {
     text-align: center;
 }
 
-.back-to-index-button {
+/* Styling for the back button */
+.back-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 15px 30px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
+    background-image: linear-gradient(to bottom, #000000, #003366); /* Gradient background */
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effect */
 }
 
-.back-to-index-button:hover {
-    background-color: #45a049;
+.back-button:hover {
+    transform: translateY(-2px); /* Move button up on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Increase shadow size on hover */
 }
+
