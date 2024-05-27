@@ -29,8 +29,6 @@
                     <input type="text" name="username" class="loginInput">
                 </label>
 
-                <br><br>
-
                 <label for="password" style="text-align: center">Password:<br>
                     <input type="password" name="password" class="loginInput">
                 </label>
@@ -61,19 +59,25 @@
                     $vyber = mysqli_query($connection, "select * from accounts");
 
 
-                    echo "<div class = 'notification'>";
-                        while($row = mysqli_fetch_assoc($vyber)) {
-                            if ($row["username"] == $username) {
-                                echo "Username je už zabraný<br>";
-                                return;
-                            }
+                    echo "<div class='notification ";
+                    $isUsernameTaken = false;
+                    while ($row = mysqli_fetch_assoc($vyber)) {
+                        if ($row["username"] == $username) {
+                            $isUsernameTaken = true;
+                            break;
                         }
+                    }
 
-
+                    if ($isUsernameTaken) {
+                        echo "error-notification'>";
+                        echo "Heslo je už zabrané<br>";
+                    } else {
+                        echo "success-notification'>";
+                        echo "Úspěšně registrován";
                         //echo "Jojo, určitě jsi registrovaný 👍👍👍👍👍👍 <br>";
                         //echo "HAHAHAHHA, LEAKNUL JSEM TI HESLO<br>";
                         //echo "username: $username <br>password: $password";
-
+                    }
                     echo "</div>";
 
 

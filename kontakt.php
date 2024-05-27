@@ -55,15 +55,15 @@
           <form action="#" method="POST">
             <div class="form-group">
                 <h1>Kontaktujte nás</h1>
-              <label for="name">Jméno:</label>
+              <label for="name"><h4>Jméno:</h4></label>
               <input type="text" id="name" name="name" required>
             </div>
             <div class="form-group">
-              <label for="email">Email:</label>
+              <label for="email"><h4>Email:</h4></label>
               <input type="text" id="email" name="email" required>
             </div>
             <div class="form-group">
-              <label for="message">Zpráva:</label>
+              <label for="message"><h4>Zpráva:</h4></label>
               <textarea id="message" name="message" required></textarea>
             </div>
             <button type="submit" class="button">Odeslat</button>

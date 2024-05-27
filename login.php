@@ -24,7 +24,7 @@ function console_log($output, $with_script_tags = true) {
         <label for="username" style="text-align: center">Username:
             <input type="text" name="username" class="loginInput">
         </label>
-        <br><br>
+
         <label for="password" style="text-align: center">Password:<br>
             <input type="password" name="password" class="loginInput">
         </label>
@@ -49,13 +49,16 @@ function console_log($output, $with_script_tags = true) {
             $query = "SELECT * FROM accounts WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($connection, $query);
 
-            echo "<div class = 'notification'>";
+            echo "<div class='notification ";
             if (mysqli_num_rows($result) > 0) {
+                echo "success-notification'>";
                 echo "Login je správný! Vítej, $username.<br>";
             } else {
+                echo "error-notification'>";
                 echo "Špatné heslo nebo jméno.<br>";
             }
             echo "</div>";
+
 
             mysqli_close($connection);
         }
