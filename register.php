@@ -78,7 +78,7 @@
 
 
                     if ($vysl) console_log("Tabulka je funkční");
-                    else console_log("Zajimavý, někde je problém, nechtěla se vytvořit stránka. (Víte co? Mě to nezajíma)");
+                    else console_log("Zajimavý, někde je problém, nechtěla se vytvořit stránka. (Víte co? Mě to nezajímá)");
 
                     $prikaz = "insert into accounts (username, password) values('$username', '$password');";
 
