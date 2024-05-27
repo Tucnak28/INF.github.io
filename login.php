@@ -35,7 +35,7 @@
                     <input type="password" name="password" class="loginInput">
                 </label>
 
-                <input type="submit" name="prihlasit" value="Registrovat" id="loginButton">
+                <input type="submit" name="prihlasit" value="Přihlásit" id="loginButton">
 
                 <?php
                 $hostname = "localhost";
@@ -82,7 +82,7 @@
 
                     $vysl = mysqli_query($connection, $prikaz);
 
-
+                    mysqli_close($connection);
                 }
 
 

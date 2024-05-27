@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a1ed6112-8166-473c-bb25-897ed5cccba9" name="web" url="http://localhost/3B/Zaverecka">
+      <webServer id="a1ed6112-8166-473c-bb25-897ed5cccba9" name="web" url="http://localhost/Tucnak28.github.io">
         <fileTransfer accessType="LOCAL" port="0" />
       </webServer>
     </option>

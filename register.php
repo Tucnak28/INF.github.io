@@ -47,6 +47,12 @@
                     or die("Problém");
                     mysqli_set_charset($connection, "utf8mb4");
 
+                    $prikaz = "CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY AUTO_INCREMENT,     
+                                username VARCHAR(50) NOT NULL,   
+                                password VARCHAR(50) NOT NULL);";
+
+                    $vysl = mysqli_query($connection, $prikaz);
+
 
 
                     $username = $_POST["username"];
@@ -71,12 +77,6 @@
                     echo "</div>";
 
 
-                    $prikaz = "CREATE TABLE IF NOT EXISTS accounts (id INT PRIMARY KEY AUTO_INCREMENT,     
-                                username VARCHAR(50) NOT NULL,   
-                                password VARCHAR(50) NOT NULL);";
-
-                    $vysl = mysqli_query($connection, $prikaz);
-
                     if ($vysl) console_log("Tabulka je funkční");
                     else console_log("Zajimavý, někde je problém, nechtěla se vytvořit stránka. (Víte co? Mě to nezajíma)");
 
@@ -84,7 +84,7 @@
 
                     $vysl = mysqli_query($connection, $prikaz);
 
-
+                    mysqli_close($connection);
                 }
 
 
