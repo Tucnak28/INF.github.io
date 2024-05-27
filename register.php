@@ -33,7 +33,12 @@
                     <input type="password" name="password" class="loginInput">
                 </label>
 
+                <label for="confirm_password" style="text-align: center">Confirm Password:
+                    <input type="password" name="confirm_password" id="confirm_password" class="loginInput">
+                </label>
+
                 <input type="submit" name="prihlasit" value="Registrovat" id="loginButton">
+                <h4>Máte už účet? Přihlaš se sakra!</h4><a href="login.php" style="color: #003366;">Přihlásit se</a>
 
                 <?php
                 $hostname = "localhost";
@@ -55,9 +60,20 @@
 
                     $username = $_POST["username"];
                     $password = $_POST["password"];
+                    $confirm_password = $_POST["confirm_password"];
+
+                    // Check if passwords match
+                    if ($password !== $confirm_password) {
+                        echo "<div class='notification error-notification'>Hesla se neshodují.</div>";
+                        return;
+                    }
 
                     $vyber = mysqli_query($connection, "select * from accounts");
 
+                    if(empty($username) || empty($password)) {
+                        echo "<div class='notification error-notification'>Musíte zadat i username i heslo.</div>";
+                        return;
+                    }
 
                     echo "<div class='notification ";
                     $isUsernameTaken = false;
@@ -70,7 +86,7 @@
 
                     if ($isUsernameTaken) {
                         echo "error-notification'>";
-                        echo "Heslo je už zabrané<br>";
+                        echo "Username je už zabrané<br>";
                     } else {
                         echo "success-notification'>";
                         echo "Úspěšně registrován";

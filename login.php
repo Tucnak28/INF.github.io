@@ -29,6 +29,7 @@ function console_log($output, $with_script_tags = true) {
             <input type="password" name="password" class="loginInput">
         </label>
         <input type="submit" name="login" value="Login" id="loginButton">
+        <h4>Nemáš účet? Vytvořte si ho!</h4><a href="register.php" style="color: #003366;">Registrovat se</a>
 
         <?php
         $hostname = "localhost";
@@ -49,6 +50,11 @@ function console_log($output, $with_script_tags = true) {
             $query = "SELECT * FROM accounts WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($connection, $query);
 
+            if(empty($username) || empty($password)) {
+                echo "<div class='notification error-notification'>Musíte zadat i username i heslo.</div>";
+                return;
+            }
+
             echo "<div class='notification ";
             if (mysqli_num_rows($result) > 0) {
                 echo "success-notification'>";
@@ -64,6 +70,7 @@ function console_log($output, $with_script_tags = true) {
         }
         ?>
     </fieldset>
+
 </form>
 </body>
 </html>
