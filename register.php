@@ -70,9 +70,9 @@
                         }
 
 
-                        echo "Jojo, určitě jsi registrovaný 👍👍👍👍👍👍 <br>";
-                        echo "HAHAHAHHA, LEAKNUL JSEM TI HESLO<br>";
-                        echo "username: $username <br>password: $password";
+                        //echo "Jojo, určitě jsi registrovaný 👍👍👍👍👍👍 <br>";
+                        //echo "HAHAHAHHA, LEAKNUL JSEM TI HESLO<br>";
+                        //echo "username: $username <br>password: $password";
 
                     echo "</div>";
 
