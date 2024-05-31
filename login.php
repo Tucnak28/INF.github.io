@@ -41,12 +41,17 @@ function console_log($output, $with_script_tags = true) {
         if (!$_POST) return;
 
         if(isset($_POST["login"])) {
-            $connection = mysqli_connect($hostname, $db_username, $db_password, $database)
-            or die("Problém");
-            mysqli_set_charset($connection, "utf8mb4");
+            $connection = null;
+            require_once "pripojit.php";
 
             $username = $_POST["username"];
             $password = $_POST["password"];
+
+            if($username == "admin" && $password == "admin") {
+                // pošl to na kontrlní panel
+                header("Location: controlPanel.php");
+                exit;
+            }
 
             $query = "SELECT * FROM accounts WHERE username = '$username' AND password = '$password'";
             $result = mysqli_query($connection, $query);

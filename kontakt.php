@@ -66,7 +66,9 @@
               <label for="message"><h4>Zpráva:</h4></label>
               <textarea id="message" name="message" required></textarea>
             </div>
+          <div class="form-group" style="margin-bottom: 0">
             <button type="submit" class="button">Odeslat</button>
+          </div>
           </form>
         </div>
         
