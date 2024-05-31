@@ -19,6 +19,13 @@ function console_log($output, $with_script_tags = true) {
 </head>
 <body>
 <a href="index.php" class="back-button">Zpět</a>
+
+<div class="note">
+    <h1>Control panel</h1>
+    <h3>Username: admin</h3>
+    <h3>Password: admin</h3>
+</div>
+
 <h1 style="text-align: center">Login</h1>
 <form action="" method="post">
     <fieldset class="formLogin">
@@ -76,7 +83,6 @@ function console_log($output, $with_script_tags = true) {
         }
         ?>
     </fieldset>
-
 </form>
 </body>
 </html>

@@ -10,7 +10,7 @@
   </div>
   <div class="nav-login">
     <ul>
-        <li><a href="#"><img src="images/Mail_resized.png" alt="Mail.png, 7,2kB" title="Mail" id="mail"></a></li>
+        <!--<li><a href="#"><img src="images/Mail_resized.png" alt="Mail.png, 7,2kB" title="Mail" id="mail"></a></li> -->
         <li><a href='login.php'><img src="images/Profile_resized.png" alt="Profile.png, 10kB" title="Profile" id="profile"></a></li>
     </ul>
   </div>

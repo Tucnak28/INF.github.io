@@ -38,13 +38,25 @@
                     <input type="password" name="confirm_password" id="confirm_password" class="loginInput">
                 </label>
 
-                <label for="gender" style="text-align: center">Gender:
+                <label for="gender" style="text-align: center">Pohlaví:
                     <select name="gender" id="gender" class="loginInput" style="background: white; color: black">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="Apache helicopter 9000">Apache helicopter 9000</option>
                         <option value="Walmart bag">Walmart bag</option>
                         <option value="other">Other</option>
+                    </select>
+                </label>
+
+                <label for="plan" style="text-align: center">Plán:
+                    <br>
+                    <select name="plan" id="plan" class="loginInput" style="background: white; color: black">
+                        <option value="Noob 1Gb/s optika">Noob 1Gb/s (optika, 1000 Mb/s Down, 1000 Mb/s Up)</option>
+                        <option value="Pro 2.5Gb/s optika">Pro 2.5Gb/s (optika, 2500 Mb/s Down, 2500 Mb/s Up)</option>
+                        <option value="Hacker 50Gb/s optika">Hacker 50Gb/s (optika, 50000 Mb/s Down, 50000 Mb/s Up)</option>
+                        <option value="Noob 10Mb/s wireless">Noob 10Mb/s (wireless, 10 Mb/s Down, 10 Mb/s Up)</option>
+                        <option value="Pro 100Mb/s wireless">Pro 100Mb/s (wireless, 100 Mb/s Down, 100 Mb/s Up)</option>
+                        <option value="Hacker 1Gb/s wireless">Hacker 1Gb/s (wireless, 1000 Mb/s Down, 1000 Mb/s Up)</option>
                     </select>
                 </label>
 
@@ -71,8 +83,9 @@
                                 id INT PRIMARY KEY AUTO_INCREMENT,
                                 username VARCHAR(50) NOT NULL,
                                 password VARCHAR(50) NOT NULL,
-                                gender VARCHAR(10),
-                                dob DATE
+                                gender VARCHAR(20) NOT NULL,
+                                plan VARCHAR(40) NOT NULL,
+                                dob DATE NOT NULL
                             );";
 
                     $vysl = mysqli_query($connection, $prikaz);
@@ -83,15 +96,14 @@
                     $password = $_POST["password"];
                     $confirm_password = $_POST["confirm_password"];
                     $gender = $_POST["gender"];
+                    $plan = $_POST["plan"];
                     $dob = $_POST["dob"];
 
-                    // Validate the date of birth format
                     if (!empty($dob) && !strtotime($dob)) {
                         echo "<div class='notification error-notification'>Neplatný formát data narození.</div>";
                         return;
                     }
 
-                    // Check if passwords match
                     if ($password !== $confirm_password) {
                         echo "<div class='notification error-notification'>Hesla se neshodují.</div>";
                         return;
@@ -130,7 +142,7 @@
                     if ($vysl) console_log("Tabulka je funkční");
                     else console_log("Zajimavý, někde je problém, nechtěla se vytvořit stránka. (Víte co? Mě to nezajímá)");
 
-                    $prikaz = "INSERT INTO accounts (username, password, gender, dob) VALUES ('$username', '$password', '$gender', '$dob');";
+                    $prikaz = "INSERT INTO accounts (username, password, gender, plan, dob) VALUES ('$username', '$password', '$gender', '$plan', '$dob');";
 
                     $vysl = mysqli_query($connection, $prikaz);
 

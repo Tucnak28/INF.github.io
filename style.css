@@ -6,8 +6,8 @@ body {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom, #003366, #000000);
+    height: 100%;
 }
-
 
 
 footer {
@@ -198,7 +198,7 @@ label {
   font-weight: bold;
 }
 
-input[type="text"], textarea {
+input[type="text"], textarea, input[type="date"] {
   width: 85%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -632,23 +632,23 @@ input[type="password"]:focus {
     text-align: center;
 }
 
-/* Styling for the back button */
 .back-button {
     display: inline-block;
+    position: fixed;
     padding: 15px 30px;
     font-size: 32px;
     font-weight: bold;
     color: #fff;
     text-decoration: none;
-    background-image: linear-gradient(to bottom, #000000, #003366); /* Gradient background */
+    background-image: linear-gradient(to bottom, #000000, #003366);
     border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .back-button:hover {
-    transform: translateY(-2px); /* Move button up on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Increase shadow size on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 button, input[type="submit"] {
@@ -662,23 +662,20 @@ button, input[type="submit"] {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Styles for the remove button */
 .remove-button {
-    background-color: #ff5252; /* Red color */
+    background-color: #ff5252;
     color: #fff;
 }
 
-/* Styles for the edit button */
 .edit-button {
-    background-color: #007bff; /* Blue color */
+    background-color: #007bff;
     color: #fff;
 }
 
-/* Hover and focus styles for all action buttons */
 .button:hover,
 .button:focus {
     outline: none;
-    background-color: #0056b3; /* Darker blue on hover/focus */
+    background-color: #0056b3;
 }
 
 
@@ -743,10 +740,6 @@ select {
 }
 
 
-
-
-
-
 .form-section {
     margin-bottom: 30px;
 }
@@ -757,7 +750,21 @@ select {
     margin-bottom: 5px;
 }
 
-option {
-    color: black;
+.action-select {
+    color: white;
 }
 
+.note {
+    width: 300px;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(49, 51, 56, 0.8);
+    margin: auto 1rem;
+    text-align: center;
+}
+
+.genderSelect {
+    color: black;
+    background: white;
+}
