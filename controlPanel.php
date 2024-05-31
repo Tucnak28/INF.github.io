@@ -170,8 +170,12 @@ $result = mysqli_query($connection, $query);
     <?php if ($display_record): ?>
         <div class="container">
             <h2>Detaily ID <?php echo $display_record['id']; ?></h2>
-            <div style="color: black">Username: <?php echo htmlspecialchars($display_record['username'], ENT_QUOTES, 'UTF-8'); ?></div>
-            <div style="color: black">Password: <?php echo htmlspecialchars($display_record['password'], ENT_QUOTES, 'UTF-8'); ?></div>
+            <div style="color: black">Username: <?php echo $display_record['username'] ?></div>
+            <div style="color: black">Password: <?php echo $display_record['password'] ?></div>
+            <div style="color: black">Pohlaví: <?php echo $display_record['gender']; ?></div>
+            <div style="color: black">Plán: <?php echo $display_record['plan']; ?></div>
+            <div style="color: black">Datum narození: <?php echo $display_record['dob']; ?></div>
+
         </div>
     <?php endif; ?>
 
